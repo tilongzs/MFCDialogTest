@@ -35,8 +35,8 @@ BOOL CDialogTestDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);
 
 
-	return TRUE; 
-
+	return TRUE;
+}
 
 void CDialogTestDlg::OnPaint()
 {
