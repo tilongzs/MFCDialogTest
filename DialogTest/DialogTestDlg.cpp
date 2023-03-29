@@ -10,6 +10,8 @@
 
 #define WMSG_FUNCTION		WM_USER + 1
 
+using namespace std;
+
 CDialogTestDlg::CDialogTestDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_DIALOGTEST_DIALOG, pParent)
 {
@@ -108,6 +110,12 @@ void CDialogTestDlg::AppendMsg(const WCHAR* msg)
 		});
 
 	PostMessage(WMSG_FUNCTION, (WPARAM)pFunc);
+}
+
+void CDialogTestDlg::AppendMsg(const std::string_view msg)
+{
+	USES_CONVERSION;
+	AppendMsg(A2W(msg.data()));
 }
 
 LRESULT CDialogTestDlg::OnFunction(WPARAM wParam, LPARAM lParam)

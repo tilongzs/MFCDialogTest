@@ -1,6 +1,8 @@
 ﻿#pragma once
 #include <functional>
-using namespace std;
+#include <string>
+
+using std::function;
 
 class CDialogTestDlg : public CDialogEx
 {
@@ -31,6 +33,7 @@ protected:
 
 
 	void AppendMsg(const WCHAR* msg);
+	void AppendMsg(const std::string_view msg);
 	LRESULT OnFunction(WPARAM wParam, LPARAM lParam);
 public:
 	afx_msg void OnBnClickedButton1();
